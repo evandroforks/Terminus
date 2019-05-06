@@ -8,7 +8,7 @@
             "env": {},
             "enable": true,
             "default": false,
-            "platforms": ["linux", "osx"]
+            "platforms": ["linux", "osx", "windows"]
         },
         {
             "name": "Zsh",
