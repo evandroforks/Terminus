@@ -49,9 +49,28 @@ This package is heavily inspired by [TerminalView](https://github.com/Wramberg/T
 - terminal panel
 - [imgcat](https://www.iterm2.com/documentation-images.html) support (PS: it also works on Linux / WSL)
 
+
 ## Installation
 
-Package Control.
+### By Package Control
+
+1. Download & Install `Sublime Text 3` (https://www.sublimetext.com/3)
+1. Go to the menu `Tools -> Install Package Control`, then,
+   wait few seconds until the `Package Control` installation finishes
+1. Go to the menu `Preferences -> Package Control`
+1. Type `Package Control Add Channel` on the opened quick panel and press <kbd>Enter</kbd>
+1. Then, input the following address and press <kbd>Enter</kbd>
+   ```
+   https://raw.githubusercontent.com/evandrocoan/StudioChannel/master/channel.json
+   ```
+1. Now, go again to the menu `Preferences -> Package Control`
+1. This time type `Package Control Install Package` on the opened quick panel and press <kbd>Enter</kbd>
+1. Then, search for `Terminus` and press <kbd>Enter</kbd>
+
+See also:
+1. [ITE - Integrated Toolset Environment](https://github.com/evandrocoan/ITE)
+1. [Package control docs](https://packagecontrol.io/docs/usage) for details.
+
 
 ### Getting started
 
@@ -74,7 +93,7 @@ Check the details for the arguments of `terminus_open` below.
 - open a terminal view at current file directory
 ```json
 [
-    { 
+    {
         "keys": ["ctrl+alt+t"], "command": "terminus_open", "args": {
             "config_name": "Default",
             "cwd": "${file_path:${folder}}"
@@ -85,7 +104,7 @@ Check the details for the arguments of `terminus_open` below.
 or by passing a custom `cmd`, say `ipython`
 ```json
 [
-    { 
+    {
         "keys": ["ctrl+alt+t"], "command": "terminus_open", "args": {
             "cmd": "ipython",
             "cwd": "${file_path:${folder}}"
@@ -300,7 +319,7 @@ window.run_command(
 The fields `cmd` and `cwd` understand Sublime Text build system [variables](https://www.sublimetext.com/docs/3/build_systems.html#variables).
 
 
-- the setting `view.settings().get("terminus_view.tag")` can be used to identify the terminal and 
+- the setting `view.settings().get("terminus_view.tag")` can be used to identify the terminal and
 
 - keybind can be binded with specific tagged terminal
 
@@ -316,7 +335,7 @@ The fields `cmd` and `cwd` understand Sublime Text build system [variables](http
 
 ```py
 window.run_command(
-    "terminus_send_string", 
+    "terminus_send_string",
     {
         "string": "ls\n",
         "tag": "<YOUR_TAG>"        # ignore this or set it to None to send text to the first terminal found
